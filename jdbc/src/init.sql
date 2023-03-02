@@ -19,6 +19,8 @@ VALUES ('root', '123456', '经理'),
 
 SELECT id, account, PASSWORD, nickname FROM t_user;
 
+select * from t_user;
+
 select * from t_user
     where account = 'root' and PASSWORD = '123456';
 

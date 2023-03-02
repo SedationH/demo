@@ -8,7 +8,6 @@ public class PrepareStatement {
         String account = scanner.nextLine();
         System.out.println("请输入密码：");
         String password = scanner.nextLine();
-        scanner.close();
 
         Class.forName("com.mysql.cj.jdbc.Driver");
         String url = "jdbc:mysql://localhost:3306/atguigu";
