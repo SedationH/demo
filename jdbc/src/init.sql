@@ -24,3 +24,4 @@ select * from t_user;
 select * from t_user
     where account = 'root' and PASSWORD = '123456';
 
+delete from t_user where true
