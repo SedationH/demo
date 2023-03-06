@@ -1,6 +1,7 @@
-package transaction;
+package transaction2;
 
 import org.junit.Test;
+import utils.JDBCUtilV1;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,9 +11,7 @@ public class BankService {
     public void transfer(String from, String to, int money) throws ClassNotFoundException, SQLException, SQLException {
         // 一个事务的最基本要求，必须是一个 connection
         // 一个转账的过程，必须是一个事务
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        String url = "jdbc:mysql://localhost:3306/atguigu";
-        Connection connection = DriverManager.getConnection(url, "root", "password");
+        Connection connection = JDBCUtilV1.getConnection();
 
         try {
             // 关闭事务的自动提交
@@ -20,7 +19,6 @@ public class BankService {
             BankDAO bankDAO = new BankDAO();
             // 其实应该先减去，为了测试事务，先加上
             bankDAO.add(to, money, connection);
-            connection.commit();
             bankDAO.sub(from, money, connection);
             connection.commit();
         } catch (Exception e) {
