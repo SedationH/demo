@@ -2,7 +2,9 @@ import org.junit.Test;
 
 import java.sql.*;
 
+// 拓展提升部分
 public class SQOther {
+    // 获得主键
     @Test
     public void getPrimaryKey() throws ClassNotFoundException, SQLException {
         // 注册驱动
@@ -73,6 +75,8 @@ public class SQOther {
         preparedStatement.close();
     }
 
+
+    // 批量添加
     @Test
     public void batchUpdateDemo2() throws ClassNotFoundException, SQLException {
         // 注册驱动
