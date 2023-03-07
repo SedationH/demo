@@ -26,7 +26,7 @@ public class BankService {
             e.printStackTrace();
             connection.rollback();
         } finally {
-            connection.close();
+            JDBCUtilV2.freeConnection();
         }
     }
 
