@@ -15,7 +15,7 @@ public class JDBCUtilV1 {
         Properties properties = new Properties();
         try {
             properties.load(
-                    JDBCUtilV1.class.getClassLoader().getResourceAsStream("druid.properties")
+                    JDBCUtilV1.class.getResourceAsStream("druid.properties")
             );
             dataSource = DruidDataSourceFactory.createDataSource(properties);
         } catch (Exception e) {

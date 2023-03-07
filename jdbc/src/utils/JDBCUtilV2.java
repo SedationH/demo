@@ -24,14 +24,13 @@ public class JDBCUtilV2 {
         Properties properties = new Properties();
         try {
             properties.load(
-                    JDBCUtilV2.class.getClassLoader().getResourceAsStream("druid.properties")
+                    JDBCUtilV2.class.getResourceAsStream("druid.properties")
             );
             dataSource = DruidDataSourceFactory.createDataSource(properties);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
-
     public static Connection getConnection() throws SQLException {
         Connection connection = threadLocal.get();
         if (connection == null) {

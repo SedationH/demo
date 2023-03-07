@@ -1,4 +1,4 @@
-package transaction3;
+package transaction;
 
 import org.junit.Test;
 import utils.JDBCUtilV1;
