@@ -2,11 +2,19 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<!--    1. 在 pom.xml 中加 spring-->
-<!--    2. 在 本文件配置 bean-->
-    <bean id="bookDao" class="dao.impl.BookDaoImpl"></bean>
-    <bean id="bookService" class="service.impl.BookServiceImpl"></bean>
-    <bean id="bookService2" class="service.impl.BookServiceImpl2">
-        <property name="bookDao" ref="bookDao"></property>
-    </bean>
+    <!--    1. 在 pom.xml 中加 spring-->
+    <!--    2. 在 本文件配置 bean-->
+    <!--    即使不用 AppX 的运行没有拿，这边也都会去创建-->
+<!--    <bean id="bookDao" class="dao.impl.BookDaoImpl"></bean>-->
+<!--    <bean id="bookDao2" class="dao.impl.BookDaoImpl2"></bean>-->
+<!--    <bean id="bookService" class="service.impl.BookServiceImpl"></bean>-->
+<!--    <bean id="bookService2" class="service.impl.BookServiceImpl2">-->
+<!--        <property name="bookDao" ref="bookDao2"></property>-->
+<!--    </bean>-->
+
+<!--    <bean id="bookDao3" class="factory.BookDaoFactory" factory-method="getBookDao"></bean>-->
+
+<!--    <bean id="bookDaoFactory" class="factory.BookDaoFactory2"></bean>-->
+<!--    <bean id="bookDao4" factory-bean="bookDaoFactory" factory-method="getBookDao"></bean>-->
+    <bean id="bookDao5" class="factory.BookDaoFactoryBean"/>
 </beans>
