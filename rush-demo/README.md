@@ -1,0 +1,28 @@
+web
+  网站主页面
+  依赖
+    details
+    share-logic
+    type
+    config
+details
+  详情页面
+  依赖
+    share-logic
+    type
+    config
+dynamic
+  动态组件业务
+  依赖
+    share-logic
+    type
+    config
+share-logic
+  业务不相关的通用能力 如 正则 判断 文件大小判断
+  依赖
+    type
+    config
+type
+  公共类型
+config
+  公共配置
