@@ -9,12 +9,13 @@
   ],
   "main": "./src/index.ts",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build"
+    "build": "exit 0",
+    "test": "vitest"
   },
   "devDependencies": {
     "typescript": "^4.9.4",
     "vite": "^4.0.4",
-    "vite-plugin-dts": "~2.1.0"
+    "vite-plugin-dts": "~2.1.0",
+    "vitest": "~0.29.2"
   }
 }
