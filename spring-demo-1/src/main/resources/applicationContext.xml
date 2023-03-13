@@ -15,6 +15,17 @@
     <!--    <bean id="bookDaoFactory" class="factory.BookDaoFactory2"></bean>-->
     <!--    <bean id="bookDao4" factory-bean="bookDaoFactory" factory-method="getBookDao"></bean>-->
     <!--    <bean id="bookDao5" class="factory.BookDaoFactoryBean"/>-->
-    <bean id="bookDao6" class="dao.impl.BookDaoImpl3" init-method="init" destroy-method="destroy"></bean>
-    <bean id="bookDao7" class="dao.impl.BookDaoImpl4"></bean>
+    <!--    <bean id="bookDao6" class="dao.impl.BookDaoImpl3" init-method="init" destroy-method="destroy"></bean>-->
+    <!--    <bean id="bookDao7" class="dao.impl.BookDaoImpl4"></bean>-->
+    <bean id="bookDao1" class="dao.impl.BookDaoImpl"></bean>
+    <bean id="bookDao2" class="dao.impl.BookDaoImpl"></bean>
+    <bean id="bookService" class="service.impl.BookServiceImpl3">
+        <property name="bookDao" ref="bookDao1"></property>
+        <property name="bookDao2" ref="bookDao2"></property>
+        <property name="name" value="张三"></property>
+    </bean>
+    <bean id="bookService2" class="service.impl.BookServiceImpl3">
+        <constructor-arg name="bookDao3" ref="bookDao1"></constructor-arg>
+        <constructor-arg name="age" value="123"></constructor-arg>
+    </bean>
 </beans>
